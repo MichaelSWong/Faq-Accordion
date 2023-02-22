@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { IQuestions } from './interfaces';
+import Question from './Question';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Project 2: FAQ/Accordion</h1>
+      <div className='container'>
+        <h2>Frequently Asked Questions</h2>
+        {questions.map((question) => (
+          <Question key={question.id} question={question} />
+        ))}
+      </div>
+    </>
   );
 }
 
 export default App;
+
+const questions: IQuestions = [
+  {
+    id: 1,
+    title: 'Is this a good product?',
+    info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem.',
+  },
+  {
+    id: 2,
+    title: 'How much does it cost?',
+    info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem.',
+  },
+  {
+    id: 3,
+    title: 'When can I get it?',
+    info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui facere in labore maxime, assumenda iure sed tenetur alias omnis eveniet similique laborum, neque porro unde ducimus officiis animi vitae! Quidem.',
+  },
+];
